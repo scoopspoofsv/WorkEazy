@@ -5,6 +5,7 @@ import SideNav from "./public/src/components/general/SideNav";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
+  
     <BrowserRouter>
       <div className="main-content">
         <SideNav />

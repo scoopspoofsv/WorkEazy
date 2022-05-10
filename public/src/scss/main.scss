@@ -37,6 +37,7 @@ img {
     width: 18%;
     border-right: 2px solid $medium-color-1;
     min-height: 100vh;
+    position: relative;
     .logo{
         padding: 20px 60px 12px 20px;
         background-color: $primary-color;
@@ -75,6 +76,52 @@ img {
             }
         }
     }
+    .footer{
+        position: absolute;
+        bottom: 20px;
+        background-color: $medium-color-1;
+        width: 100%;
+        padding: 10px 0;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 45px;
+            background-color: $primary-color;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+        .admin{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .icon{
+            width: 50px;
+            border-radius: 50%;
+            img{
+                border: 1px solid $grey-text;
+                border-radius: 50%;
+            }
+        }
+        .details{
+            width: 70%;
+            .name{
+                font-weight: bold;
+            }
+            .designation{
+                font-size: 14px;
+                color: $grey-text;
+            }
+        }
+    }
+}
+.nodata{
+    margin-top: 20px;
+    font-size: 20px;
+    color: $grey-text;
 }
 
 .App{

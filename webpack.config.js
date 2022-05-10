@@ -1,5 +1,5 @@
 const path = require("path");
-
+const CopyPlugin = require("copy-webpack-plugin");
 /*We are basically telling webpack to take index.js from entry. Then check for all file extensions in resolve. 
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
 
@@ -81,6 +81,10 @@ module.exports={
                 use: "html-loader"
             },
             {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+            {
                 test: /\.scss$/,
                 use:[
                   "style-loader",
@@ -88,6 +92,14 @@ module.exports={
                   "sass-loader"
                 ],
             },
+            {
+                test: /\.(otf|png|jpg|jpeg|gif|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: 'url-loader',
+            },
+            {
+                test: /\.(ttf|eot|svg|pdf?)(\?[a-z0-9=&.]+)?$/,
+                use: 'file-loader',
+            },
         ]
-    }
+    },
 }
